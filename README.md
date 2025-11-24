@@ -1,26 +1,16 @@
 ## 📘 Fine-Tuning Gemma + Unsloth + LoRA + Export GGUF
 
-Repository ini berisi kode untuk melakukan fine-tuning model Gemma 3 1B menggunakan Unsloth (optimasi penggunaan VRAM) dan LoRA sebagai metode parameter-efficient tuning.
-Hasil fine-tuning juga dapat diekspor ke format GGUF sehingga model bisa dijalankan secara lokal menggunakan runtime seperti llama.cpp, Ollama, atau aplikasi serupa.
+Repository ini berisi notebook untuk melakukan **fine-tuning Gemma 3 (1B / 2B / 3B)** menggunakan:
 
-#### Bisa dijalankan offline di laptop/PC menggunakan:
-- LM Studio
-- llama.cpp
-- Ollama
+- **Unsloth** (optimasi penggunaan VRAM, lebih cepat dari HuggingFace)
+- **LoRA** (parameter-efficient tuning)
+- **SFTTrainer** (cocok untuk dataset kecil–menengah)
+- **Export ke GGUF** (agar model bisa dijalankan secara lokal via llama.cpp, LM Studio, Ollama, dll)
 
-## 📦 Requirements
+Notebook ini 100% bisa dijalankan di:
 
-- OS yang didukung
-Linux (recommended)
-macOS
-Windows WSL2
-
-- Hardware
-GPU NVIDIA minimal 8GB VRAM
-(Lebih ideal 16–24GB)
-
-- Python version
-minimum 3.8 atau versi diatasnya
+- **Google Colab (recommended — GPU gratis)**
+- **Laptop/PC lokal menggunakan Jupyter Notebook / VSCode**
 
 ## 🚀 Features
 
@@ -29,9 +19,34 @@ minimum 3.8 atau versi diatasnya
 - Chat template inference
 - Export model ke GGUF (.gguf adalah format untuk model / LLM)
 
+## 🚀 Output dari Fine-Tuning
+
+Dari notebook ini, kamu akan mendapatkan:
+
+✔ Model hasil fine-tuning (folder HuggingFace)  
+✔ File **.gguf** siap dipakai di local runtime  
+✔ Contoh dataset QA (prompt → completion)  
+✔ Template inference chat Gemma 3 + tokenizer 
+
+## 📦 Requirements (Jika ingin training dataset di local, tidak melalui Google Colab)
+
+### **OS yang didukung**
+- Linux (recommended)
+- Windows (WSL2 disarankan)
+- macOS (Intel/M1/M2/M3)
+
+### **Hardware**
+- NVIDIA GPU minimal **8GB VRAM**  
+  (16–24GB lebih ideal)
+- CPU-only juga bisa, tapi lambat
+
+### **Python**
+- Minimal **Python 3.9** atau lebih baru
+
 ## ⚙️ Installation
 
-Berikut versi dengan kolom khusus untuk **copy-paste** setiap langkah.
+> Jika kamu hanya ingin menjalankan di **Google Colab**, lewati bagian ini.
+Silakan **copy-paste** setiap langkah.
 
 ### 1. Clone repo
 
@@ -75,10 +90,10 @@ python -m venv venv
 venv\Scripts\Activate.ps1
 ```
 
-### 3. Install dependencies
+### 3. Install Library Jupyter Notebook
 
 ```bash
-pip install -r requirements.txt
+pip install notebook
 ```
 
 Install PyTorch GPU (tidak include di requirements karena spek setiap komputer user berbeda-beda):
@@ -134,5 +149,5 @@ qa_dataset_question = [
 
 ## Jalankan Fine Tuning Gemma
 ```bash
-python train.py
+jupyter notebook
 ```
