@@ -1,6 +1,11 @@
 ## 📘 Fine-Tuning Gemma + Unsloth + LoRA + Export GGUF
 
-Repository ini berisi kode untuk melakukan fine-tuning model Gemma 3 1B dari unsloth (mengurangi kebutuhan memori GPU (VRAM)) dan menggunakan LoRA (parameter efficient tuning), kemudian mengekspor hasilnya ke format GGUF agar bisa dijalankan di local melalui LM Studio / llama.cpp / Ollama.
+Repository ini berisi kode untuk melakukan fine-tuning model Gemma 3 1B dari unsloth (mengurangi kebutuhan memori GPU (VRAM)) dan menggunakan LoRA (parameter efficient tuning), kemudian mengekspor hasilnya ke format GGUF agar bisa dijalankan di local.
+
+### Bisa dijalankan offline di laptop/PC menggunakan:
+- LM Studio
+- llama.cpp
+- Ollama
 
 ## 📦 Requirements
 
@@ -23,25 +28,57 @@ Dataset format prompt + completion
 Chat template inference
 Export model ke GGUF
 
-- Bisa dijalankan offline di laptop/PC menggunakan:
-LM Studio
-llama.cpp
-Ollama
-
 ## ⚙️ Installation
 
-- Clone repo:
+Berikut versi dengan kolom khusus untuk **copy-paste** setiap langkah.
+
+### 1. Clone repo
+
+```bash
 git clone https://github.com/barrukurniawan/gemma-finetuning.git
+```
+
+```bash
 cd gemma-finetuning
+```
 
-- Buat Virtual Environment (.env):
+### 2. Buat Virtual Environment (.env)
+
+**Linux / macOS (zsh / bash):**
+
+```bash
 python -m venv venv
-source venv/bin/activate    # Linux Bash/macOS zsh
-.\venv\Scripts\activate.bat # Windows Command Prompt (CMD)
-.\venv\Scripts\Activate.ps1 # Windows PowerShell
+```
 
-- Install dependencies (libraries):
+```bash
+source venv/bin/activate
+```
+
+**Windows CMD:**
+
+```bash
+python -m venv venv
+```
+
+```cmd
+venv\Scripts\activate.bat
+```
+
+**Windows PowerShell:**
+
+```bash
+python -m venv venv
+```
+
+```powershell
+venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
 Install PyTorch GPU (tidak include di requirements karena spek setiap komputer user berbeda-beda):
 OS	        GPU?	            CUDA Version	Perlu versi PyTorch yang berbeda?
@@ -52,22 +89,30 @@ CPU-only	Tidak pakai CUDA	-	                ✔ YA
 
 - Example:
 CUDA 12.1
+```bash
 pip install torch --index-url https://download.pytorch.org/whl/cu121
+```
 
 CUDA 11.8
+```bash
 pip install torch --index-url https://download.pytorch.org/whl/cu118
+```
 
 CPU-only
+```bash
 pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
 
 Mac M1/M2
+```bash
 pip install torch torchvision torchaudio
-
+```
 
 ## Dataset Format
 
 Sumber data yang akan di training, format yang dibuat berupa promp (pertanyaan) dan completion (jawaban)
 
+```bash
 qa_dataset_question = [
     {
         "prompt": "Apa bedanya Test Case dan Test Scenario?",
@@ -82,9 +127,9 @@ qa_dataset_question = [
         "completion": "STLC (Software Testing Life Cycle) adalah tahapan-tahapan dalam proses testing, mulai dari requirement analysis, test planning, test case development, environment setup, test execution, hingga test closure."
     }
 ]
-
+```
 
 ## Jalankan Fine Tuning Gemma
-
+```bash
 python train.py
-
+```
