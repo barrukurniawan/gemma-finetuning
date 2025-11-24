@@ -24,10 +24,10 @@ minimum 3.8 atau versi diatasnya
 
 ## 🚀 Features
 
-Fine-tuning Gemma menggunakan SFTTrainer
-Dataset format prompt + completion
-Chat template inference
-Export model ke GGUF
+- Fine-tuning Gemma menggunakan SFTTrainer, karena dataset yang sedikit
+- Dataset format prompt + completion
+- Chat template inference
+- Export model ke GGUF (.gguf adalah format untuk model / LLM)
 
 ## ⚙️ Installation
 
