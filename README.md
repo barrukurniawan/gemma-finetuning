@@ -1,8 +1,9 @@
 ## 📘 Fine-Tuning Gemma + Unsloth + LoRA + Export GGUF
 
-Repository ini berisi kode untuk melakukan fine-tuning model Gemma 3 1B dari unsloth (mengurangi kebutuhan memori GPU (VRAM)) dan menggunakan LoRA (parameter efficient tuning), kemudian mengekspor hasilnya ke format GGUF agar bisa dijalankan di local.
+Repository ini berisi kode untuk melakukan fine-tuning model Gemma 3 1B menggunakan Unsloth (optimasi penggunaan VRAM) dan LoRA sebagai metode parameter-efficient tuning.
+Hasil fine-tuning juga dapat diekspor ke format GGUF sehingga model bisa dijalankan secara lokal menggunakan runtime seperti llama.cpp, Ollama, atau aplikasi serupa.
 
-### Bisa dijalankan offline di laptop/PC menggunakan:
+#### Bisa dijalankan offline di laptop/PC menggunakan:
 - LM Studio
 - llama.cpp
 - Ollama
@@ -81,11 +82,13 @@ pip install -r requirements.txt
 ```
 
 Install PyTorch GPU (tidak include di requirements karena spek setiap komputer user berbeda-beda):
-OS	        GPU?	            CUDA Version	Perlu versi PyTorch yang berbeda?
-Windows	    GPU                 CUDA 12.1	        ✔ YA
-Linux	    GPU                 CUDA 11.8	        ✔ YA
-Mac M1/M2	Tidak pakai CUDA	Metal backend	    ✔ YA
-CPU-only	Tidak pakai CUDA	-	                ✔ YA
+
+| OS          | GPU Support      | Backend / CUDA Version | Perlu instal PyTorch versi khusus? |
+| ----------- | ---------------- | ---------------------- | ---------------------------------- |
+| Windows     | GPU              | CUDA 12.1              | ✔️ Ya                              |
+| Linux       | GPU              | CUDA 11.8              | ✔️ Ya                              |
+| macOS M1/M2 | Tidak pakai CUDA | Metal Backend          | ✔️ Ya                              |
+| CPU-only    | Tidak pakai CUDA | –                      | ✔️ Ya                              |
 
 - Example:
 CUDA 12.1
