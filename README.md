@@ -58,7 +58,7 @@ git clone https://github.com/barrukurniawan/gemma-finetuning.git
 cd gemma-finetuning
 ```
 
-### 2. Buat Virtual Environment (.env)
+### 2. Buat Virtual Environment (.env) -> Install -> Activate
 
 **Linux / macOS (zsh / bash):**
 
