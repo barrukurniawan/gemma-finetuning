@@ -2,22 +2,16 @@
 
 Repository ini berisi notebook untuk melakukan **fine-tuning Gemma 3 (1B / 2B / 3B)** menggunakan:
 
+- **Dataset** (format prompt + completion)
 - **Unsloth** (optimasi penggunaan VRAM, lebih cepat dari HuggingFace)
 - **LoRA** (parameter-efficient tuning)
 - **SFTTrainer** (cocok untuk dataset kecil–menengah)
-- **Export ke GGUF** (agar model bisa dijalankan secara lokal via llama.cpp, LM Studio, Ollama, dll)
+- **Export Model ke GGUF** (agar model bisa dijalankan secara lokal via llama.cpp, LM Studio, Ollama, dll)
 
 Notebook ini 100% bisa dijalankan di:
 
 - **Google Colab (recommended — GPU gratis)**
 - **Laptop/PC lokal menggunakan Jupyter Notebook / VSCode**
-
-## 🚀 Features
-
-- Fine-tuning Gemma menggunakan SFTTrainer, karena dataset yang sedikit
-- Dataset format prompt + completion
-- Chat template inference
-- Export model ke GGUF (.gguf adalah format untuk model / LLM)
 
 ## 🚀 Output dari Fine-Tuning
 
