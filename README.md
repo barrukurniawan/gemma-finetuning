@@ -145,3 +145,5 @@ qa_dataset_question = [
 ```bash
 jupyter notebook
 ```
+Lalu buka file
+- finetune_gemma.ipynb
