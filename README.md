@@ -39,7 +39,7 @@ Dari notebook ini, kamu akan mendapatkan:
 
 ## ⚙️ Installation
 
-> Jika kamu hanya ingin menjalankan di **Google Colab**, lewati bagian ini.
+> Jika hanya ingin menjalankan di **Google Colab**, lewati bagian ini.
 Silakan **copy-paste** setiap langkah.
 
 ### 1. Clone repo
